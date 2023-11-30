@@ -204,3 +204,96 @@ $A_{0} = \left(\begin{array}{cc} 0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 
 
 
 ## 4. Pour aller plus loin
+
+1\) On remarque que la matrice correspond à une matrice de transition.
+On rappelle que le nombre de colonne correspond nombre d'état qu'on appellera k.
+![Alt text](image-5.png)
+![Alt text](image-4.png)
+
+2\) On peut expliciter $X_n tel que:
+$X_n = $X_0.P^n
+
+Pour faire la simulation numérique, nous avons utilisé python avec la bibliothère de mathlab:
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Définir la taille de la chaîne n et le nombre de pas k
+k = 100
+n = 200
+
+# Matrice de transition P pour une chaîne de Markov
+P = np.zeros((k, k)) #on remplit une matrice de 0
+#on fait une double boucle pour parcourir la matrice et attribuer les valeurs correspondantes
+for i in range(k):
+    for j in range(k):
+        if i % 2 != 0:
+            if j%2==0:
+                P[i, j] = 0.5
+            else:
+                P[i, j] = 0
+        elif  i % 2 == 0:
+            if j%2!=0:
+                P[i, j] = 0.5
+            else:
+                P[i, j] = 0
+        else:
+            P[i, j] = 0
+
+#on crée d'abord X0
+XO = np.zeros(k) #X0 est un vecteur remplit de 0
+#on lui attribut les valeurs correspondantes
+for i in range(k):
+    if i%2!=0:
+        XO[i]=0
+    else:
+        XO[i]=1
+#Nous allons mettre P à la puissance n
+Pn = np.copy(P) #on copie P à Pn
+#on crée une boucle pour multiplier pn n fois à p
+#sa correspond à P puissance n
+for a in range(n):
+    Pn = np.dot(Pn,P)
+
+# On crée Xn
+Xn=np.dot(Pn,XO) #on fait la matrice Pn.X0 et l'attribut à Xn
+
+# Affichage de Xn en fonction de n
+plt.figure(figsize=(8, 6))
+plt.plot(Xn)
+plt.title('Valeurs de Xn en fonction de n')
+plt.xlabel('n')
+plt.ylabel('Valeurs de Xn')
+plt.grid(True)
+plt.show()
+
+# Représentation de la distribution X200
+plt.figure(figsize=(8, 6))
+plt.hist(Xn, bins=20, edgecolor='black')
+plt.title('Distribution X200')
+plt.xlabel('Valeurs')
+plt.ylabel('Fréquence')
+plt.grid(True)
+plt.show()
+```
+
+![Alt text](image-6.png)
+![Alt text](image-7.png)
+
+​Les probabilités de transition entre les paires sont égales, c'est le cas aussi pour les impaires entre-eux. Alors, entre les paires et entre les impaires, ils ont une chance égale d'être atteint après un grand nombre d'itérations. Par conséquent, cela suggère que la distribution des probabilités à X200 converge vers une distribution uniforme distinguer selon si ils sont paires ou impaires.
+![Alt text](image-8.png)
+
+On peut l'approximer à une loi normale
+![Alt text](image-9.png)
+On peut, en réalité, en distinguer 2 avec des paramètres différents. Les états paires et impaires.
+Ils ont alors la même variance mais pas la même moyenne:
+
+Moyenne pour les états paires: μ= k/2
+Moyenne pour les états impaires: μ= (k/2)-1
+​Variance: σ²= k²/12
+
+Pour X200:
+Moyenne pour les états paires: μ= 100/2 = 50
+Moyenne pour les états impaires: μ= (100/2)-1 = 49
+​Variance: σ²= k²/12 = 100²/12 = 833.33
