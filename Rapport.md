@@ -82,43 +82,53 @@ Avec matlab nous obtenons l'exact même résultat qu'à l'exercice 5.
 
 
 ## 2. Ecosystèmes méditerranéens à 5 états
-1. Dessiner le graphe relatif à ce modèle.
+1\) Dessiner le graphe relatif à ce modèle.
     
-2. Quelle est, selon ce modèle, la probabilité que l’on passe de l’état Pi à Pe, d’une année sur
+2\) Quelle est, selon ce modèle, la probabilité que l’on passe de l’état Pi à Pe, d’une année sur
 l’autre ? 
 
-$Pi-Pe = 0,25$
+$P_i-P_e = 0.25$
+
 ---
-Et de l’état Pe à Pi ? 
-$Pe-Pi = 0$ car en une année, $Pe$ ne peut que passer à $Ga$ ou rester à $Pe$.
+Et de l’état $P_e$ à $P_i$ ? 
+$Pe-Pi = 0$ car en une année, $Pe$ ne peut que passer à $G_a$ ou rester à $P_e$.
 
-3. Sachant que l’on est dans l’état Pi, quelle est la probabilité d’une trajectoire du type Pi−Pe−Ga ?
+3\) Sachant que l’on est dans l’état Pi, quelle est la probabilité d’une trajectoire du type Pi−Pe−Ga ?
 
-$P((Pe \cap Ga)\setminus Pi) = P(Pe \setminus Pi)*P(Ga\setminus Pe)
-=0.25\times 0,6 =0,15$
+$P((P_e \cap G_a)\setminus P_i) = P(P_e \setminus P_i)*P(Ga\setminus P_e)
+= 0.25\times 0.6 =0.15$
 
-Et d’une trajectoire du type Pi−C −V ?
-$P((C\cap V)\setminus Pi) = P(C \setminus Pi)*P(V\setminus C)=0.2\times 0,1=0,02$
+Et d'une trajectoire du type Pi−C −V ?
+
+$P((C\cap V)\setminus P_i) = P(C \setminus P_i)*P(V\setminus C)=0.2\times 0.1=0.02$
+
 ---
-4. Donnez un exemple de trajectoire de probabilité nulle.
+4\) Donnez un exemple de trajectoire de probabilité nulle.
+
 $Pi-V-Ga$
-5. En vous servant de votre cours d’Algèbre linéaire de L1 expliquez, lorsque n tend vers l’infini,
-vers quelle proportion tend la dynamique lorsque
-$X_{0} =\left( \begin{matrix} C \\ V \\ Pe \\ Ga \\ Pi \end{matrix}\right )_{0}=0,2\times \left ( \begin{matrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{matrix}  \right ) $
+
 ---
-6. La transition de Pi vers Pe mime la présence des incendies. Étudier l’influence aux temps longs
+5\) En vous servant de votre cours d’Algèbre linéaire de L1 expliquez, lorsque n tend vers l’infini,
+vers quelle proportion tend la dynamique lorsque
+$X_{0} =\left( \begin{matrix} C \\ V \\ Pe \\ Ga \\ Pi \end{matrix}\right )_{0}=0,2\times \left ( \begin{matrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{matrix}  \right )$
+
+---
+6\) La transition de Pi vers Pe mime la présence des incendies. Étudier l’influence aux temps longs
 des incendies, en faisant varier sa valeur dans la matrice.
 
-La valeur initiale est $Pi-Pe=0,25$ et pour cette valeur : $Xn= \left ( \begin{matrix}  0.1752 \\ 0.1168 \\ 0.2044 \\ 
-    0.1533 \\   0.3504 \end{matrix}  \right ) $.
-Si $Pi-Pe=0 , $ alors $Xn=10^{-6}\times  \left ( \begin{matrix}  0.7431 \\ 0.6639 \\ 0.3802 \\ 
-    0.3151 \\  0.9205 \end{matrix}  \right )$
-    Si $Pi-Pe=0,1$, $Xn=10^{-3}\times  \left ( \begin{matrix} 0.0668 \\ 0.0533 \\ 0.0473 \\ 0.0378 \\ 0.1006\end{matrix}  \right ) $
+La valeur initiale est $P_i-P_e = 0.25$ et pour cette valeur : $X_n= \left( \begin{matrix} 0.1752\\ 0.1168\\ 0.2044\\ 0.1533\\ 0.3504 \end{matrix}\right )$
+
+Si $Pi-Pe = 0$ alors $Xn=10^{-6} \times \left ( \begin{matrix}  0.7431 \\ 0.6639 \\ 0.3802 \\ 0.3151 \\  0.9205 \end{matrix}  \right )$
+
+Si $Pi-Pe = 0.1$, $Xn=10^{-3} \times \left ( \begin{matrix} 0.0668 \\ 0.0533 \\ 0.0473 \\ 0.0378 \\ 0.1006\end{matrix}  \right )$
     
-    Si $Pi-Pe=0,4$,$Xn=10^{3}\times  \left ( \begin{matrix} 0.4955 \\ 0.2809 \\ 0.8967 \\ 0.6309 \\  1.2529\end{matrix}  \right )$ 
-  Si $Pi-Pe=0,6$,$Xn=10^{7}\times  \left ( \begin{matrix} 0.5804 \\ 0.2772 \\ 1.6602 \\ 1.0842 \\  1.8503\end{matrix}  \right )  $ 
-    Si $Pi-Pe=0,8$,$Xn=10^{10}\times  \left ( \begin{matrix} 1.4725 \\ 0.6174 \\ 5.9537 \\3.6564 \\  5.5508\end{matrix}  \right )  $ 
-On remarque que$ Xn$ devient plus grand quand $Pi-Pe$ devient plus grand. On peut en déduire que les incendies entraînent plus d'arbres sur le long terme et à l'inverse, pas d'incendies réduit le nombre d'arbres sur le long terme.
+Si $Pi-Pe = 0.4$, $Xn=10^{3} \times \left ( \begin{matrix} 0.4955 \\ 0.2809 \\ 0.8967 \\ 0.6309 \\  1.2529\end{matrix}  \right )$
+
+Si $Pi-Pe = 0.6$, $Xn=10^{7} \times  \left ( \begin{matrix} 0.5804 \\ 0.2772 \\ 1.6602 \\ 1.0842 \\  1.8503\end{matrix}  \right )$
+
+Si $Pi-Pe = 0.8$, $Xn=10^{10} \times  \left ( \begin{matrix} 1.4725 \\ 0.6174 \\ 5.9537 \\3.6564 \\  5.5508\end{matrix}  \right )$
+
+On remarque que $X_n$ devient plus grand quand $P_i-P_e$ devient plus grand. On peut en déduire que les incendies entraînent plus d'arbres sur le long terme et à l'inverse, pas d'incendies réduit le nombre d'arbres sur le long terme.
     
 
 ## 3. Modèle plus riche d’écosystème
@@ -155,7 +165,7 @@ Tous sont visités sauf le 12e élément. Le 1er au 4e communiquent ensemble, le
 ---
 2\) Calculs de $X_{1}$, $X_{2}$, $X_{50}$ avec matlab :
 
-$X_{0} = 1/16.\left(\begin{array}{cc} 1 &1 &1 &1 &1 &0 &0 &0 &1 &1 &1 &0 &1 &1 &1 &1 &1 &1 &1 &1 \end{array}\right)$
+$X_{0} = 1/16 \times \left(\begin{array}{cc} 1 &1 &1 &1 &1 &0 &0 &0 &1 &1 &1 &0 &1 &1 &1 &1 &1 &1 &1 &1 \end{array}\right)$
 
 $X_{1} = \left(\begin{array}{cc} 0.0688 &0.0406 &0.0844 &0.0500 &0.0813 &0 &0 &0 &0.0688 &0.0625 &0.0250 &0 &0.1219 &0.0750 &0.0438 &0.0500 &0.0438 &0.0688 &0.0594 &0.0563 \end{array}\right)$
 
