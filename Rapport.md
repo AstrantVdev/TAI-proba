@@ -121,11 +121,6 @@ On remarque que$ Xn$ devient plus grand quand $Pi-Pe$ devient plus grand. On peu
     
 
 ## 3. Modèle plus riche d’écosystème
-1. A partir de chaque état, le ou lesquels sont à un moment ou un autre visités ? Donner alors les groupes d’états qui communiquent tous ensemble. Expliquer comment cela se voit sur la matrice. 
-
-Tous sont visités sauf le 12e élément. Le 1er au 4e communiquent ensemble, le 6,7 et 8e, communiquent entre eux. Les 13 à 20 aussi. La 5e ligne communique avec les 1,3,5 et est visitee par le 7e element. Les 9,10 et 11 communquent entre elles, la 10 visite la 20 et la 11 visite la 13.
- Il faut regarder les lignes pour regarder quel élément est visité et les colonnes pour regarder les éléments que visite celui sur lequel on est.
- --- 
 
 $P= \left(\begin{array}{cc} 
 0.1& 0& 0.8& 0& 0.2& 0& 0& 0& 0& 0& 0& 0& 0& 0& 0& 0& 0& 0& 0& 0\\
@@ -150,7 +145,11 @@ $P= \left(\begin{array}{cc}
 0& 0& 0& 0& 0& 0& 0& 0& 0& 0.2& 0& 0& 0& 0.05& 0.1& 0.05& 0.1& 0.1& 0.2& 0.1\\
 \end{array}\right)$
 
-1\)
+---
+1\) A partir de chaque état, le ou lesquels sont à un moment ou un autre visités ? Donner alors les groupes d’états qui communiquent tous ensemble. Expliquer comment cela se voit sur la matrice. 
+
+Tous sont visités sauf le 12e élément. Le 1er au 4e communiquent ensemble, le 6,7 et 8e, communiquent entre eux. Les 13 à 20 aussi. La 5e ligne communique avec les 1,3,5 et est visitee par le 7e element. Les 9,10 et 11 communquent entre elles, la 10 visite la 20 et la 11 visite la 13.
+ Il faut regarder les lignes pour regarder quel élément est visité et les colonnes pour regarder les éléments que visite celui sur lequel on est.
 
 ---
 2\) Calculs de $X_{1}$, $X_{2}$, $X_{50}$ avec matlab :
