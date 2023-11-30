@@ -1,17 +1,11 @@
 # Rapport TAI (Chaînes de Markov)
 
-CONSIGNES :
+# Sommaire
 
-Un rapport est demandé pour chacune des équipes qui fera au maximum 16 pages, i.e. environ 4
-pages par partie :
-1.La forêt des Landes
-2.Écosystèmes méditerranéens
-3.Modèle plus riche d’écosystème
-4.Pour aller plus loin
-La notation tiendra compte de la qualité des courbes présentées, la concision des réponses ainsi que
-des interprétations.
-Le dépôt de votre rapport se fera sur Moodle jusqu’au samedi 2 décembre à 23h59. Aucun délais
-supplémentaire ne pourra être accepté.
+- [1. La forêt des Landes : modèle à 3 état](#1-la-forêt-des-landes--modèle-à-3-état)
+- [2. Ecosystèmes méditerranéens à 5 états](#2-ecosystèmes-méditerranéens-à-5-états)
+- [3. Modèle plus riche d’écosystème](#3-modèle-plus-riche-décosystème)
+- [4. Pour aller plus loin](#4-pour-aller-plus-loin)
 
 ## 1. La forêt des Landes : modèle à 3 état
 
