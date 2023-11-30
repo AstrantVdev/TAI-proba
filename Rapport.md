@@ -82,5 +82,52 @@ Avec matlab nous obtenons l'exact même résultat qu'à l'exercice 5.
 
 
 ## 2. Ecosystèmes méditerranéens à 5 états
+1. Dessiner le graphe relatif à ce modèle.
+    
+2. Quelle est, selon ce modèle, la probabilité que l’on passe de l’état Pi à Pe, d’une année sur
+l’autre ? 
+
+$Pi-Pe = 0,25$
+---
+Et de l’état Pe à Pi ? 
+$Pe-Pi = 0$ car en une année, $Pe$ ne peut que passer à $Ga$ ou rester à $Pe$.
+
+3. Sachant que l’on est dans l’état Pi, quelle est la probabilité d’une trajectoire du type Pi−Pe−Ga ?
+
+$P((Pe \cap Ga)\setminus Pi) = P(Pe \setminus Pi)*P(Ga\setminus Pe)
+=0.25\times 0,6 =0,15$
+
+Et d’une trajectoire du type Pi−C −V ?
+$P((C\cap V)\setminus Pi) = P(C \setminus Pi)*P(V\setminus C)=0.2\times 0,1=0,02$
+---
+4. Donnez un exemple de trajectoire de probabilité nulle.
+$Pi-V-Ga$
+5. En vous servant de votre cours d’Algèbre linéaire de L1 expliquez, lorsque n tend vers l’infini,
+vers quelle proportion tend la dynamique lorsque
+$X_{0} =\left( \begin{matrix} C \\ V \\ Pe \\ Ga \\ Pi \end{matrix}\right )_{0}=0,2\times \left ( \begin{matrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{matrix}  \right ) $
+---
+6. La transition de Pi vers Pe mime la présence des incendies. Étudier l’influence aux temps longs
+des incendies, en faisant varier sa valeur dans la matrice.
+
+La valeur initiale est $Pi-Pe=0,25$ et pour cette valeur : $Xn= \left ( \begin{matrix}  0.1752 \\ 0.1168 \\ 0.2044 \\ 
+    0.1533 \\   0.3504 \end{matrix}  \right ) $.
+Si $Pi-Pe=0
+ , $
+ alors $Xn=10^{-6}\times  \left ( \begin{matrix}  0.7431 \\ 0.6639 \\ 0.3802 \\ 
+    0.3151 \\  0.9205 \end{matrix}  \right )$
+    Si $Pi-Pe=0,1$, $Xn=10^{-3}\times  \left ( \begin{matrix} 0.0668 \\ 0.0533 \\ 0.0473 \\ 0.0378 \\ 0.1006\end{matrix}  \right ) $
+    
+
+   
+    
+    
+    
+    
+
 ## 3. Modèle plus riche d’écosystème
+1. A partir de chaque état, le ou lesquels sont à un moment ou un autre visités ? Donner alors les groupes d’états qui communiquent tous ensemble. Expliquer comment cela se voit sur la matrice. 
+
+Tous sont visités sauf le 12e élément. Le 1er au 4e communiquent ensemble, le 6,7 et 8e, communiquent entre eux. Les 13 à 20 aussi. La 5e ligne communique avec les 1,3,5 et est visitee par le 7e element. Les 9,10 et 11 communquent entre elles, la 10 visite la 20 et la 11 visite la 13.
+ Il faut regarder les lignes pour regarder quel élément est visité et les colonnes pour regarder les éléments que visite celui sur lequel on est.
+ --- 
 ## 4. Pour aller plus loin
