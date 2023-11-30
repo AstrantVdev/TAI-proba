@@ -169,7 +169,7 @@ $X_{50} = \left(\begin{array}{cc} 0.1084 &0.04440 &0.09850 &0.07160 &0.09410 &0 
 Il faut en moyenne un seul pas pour que toutes les valeurs soient concentrées sur les états {1, 2, 3, 4, 5}, {13, 14, 15, 16, 17, 18, 19, 20}
 
 ---
-3\) Simulation des états de $$Y_{n}$ par rapport à $n$ :
+3\) Simulation des états de $Y_{n}$ par rapport à $n$ :
 
 $Y_{0} = \left(\begin{array}{cc} 0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0 &0 &0 \end{array}\right)$
 
@@ -180,10 +180,20 @@ Nombre de pas moyen pour que le système peuple les états {1, 2, 3, 4, 5} :
 Nombre de pas moyen pour peupler que le système états {14, 15, 16, 17, 18, 19, 20} :
 
 ---
-4\) Simulation des états de $$Z_{n}$ par rapport à $n$ :
+4\) Simulation des états de $Z_{n}$ par rapport à $n$ :
 
 $Z_{0} = \left(\begin{array}{cc} 0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0 &0
  \end{array}\right)$
+
+![Alt text](image-7.png)
+
+---
+5\) Simulation des états de $A_{n}$ par rapport à $n$ :
+
+$A_{0} = \left(\begin{array}{cc} 0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0
+ \end{array}\right)$
+
+![Alt text](image-8.png)
 
 
 ## 4. Pour aller plus loin
