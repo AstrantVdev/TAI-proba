@@ -205,12 +205,12 @@ $A_{0} = \left(\begin{array}{cc} 0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 
 
 ## 4. Pour aller plus loin
 
-1\) On remarque que la matrice correspond à une matrice de transition.
+1\) On remarque que la matrice correspond à une matrice de transition.<br />
 On rappelle que le nombre de colonne correspond nombre d'état qu'on appellera k.
-![Alt text](image-5.png)
-![Alt text](image-4.png)
+![Alt text](graphpair.png)
+![Alt text](graphimpair.png)
 
-2\) On peut expliciter $X_n tel que:
+2\) On peut expliciter $X_n tel que:<br />
 $X_n = $X_0.P^n
 
 Pour faire la simulation numérique, nous avons utilisé python avec la bibliothère de mathlab:
@@ -278,22 +278,22 @@ plt.grid(True)
 plt.show()
 ```
 
-![Alt text](image-6.png)
-![Alt text](image-7.png)
+![Alt text](Xnenfonctionden.png)
+![Alt text](DistributionX200.png)
 
 ​Les probabilités de transition entre les paires sont égales, c'est le cas aussi pour les impaires entre-eux. Alors, entre les paires et entre les impaires, ils ont une chance égale d'être atteint après un grand nombre d'itérations. Par conséquent, cela suggère que la distribution des probabilités à X200 converge vers une distribution uniforme distinguer selon si ils sont paires ou impaires.
-![Alt text](image-8.png)
+![Alt text](loiuniforme.png)
 
 On peut l'approximer à une loi normale
-![Alt text](image-9.png)
-On peut, en réalité, en distinguer 2 avec des paramètres différents. Les états paires et impaires.
+![Alt text](loinormal.png)
+On peut, en réalité, en distinguer 2 avec des paramètres différents. Les états paires et impaires.<br />
 Ils ont alors la même variance mais pas la même moyenne:
 
-Moyenne pour les états paires: μ= k/2
-Moyenne pour les états impaires: μ= (k/2)-1
-​Variance: σ²= k²/12
+Moyenne pour les états paires: μ= k/2<br />
+Moyenne pour les états impaires: μ= (k/2)-1<br />
+​Variance: σ²= k²/12<br />
 
-Pour X200:
-Moyenne pour les états paires: μ= 100/2 = 50
-Moyenne pour les états impaires: μ= (100/2)-1 = 49
+Pour X200:<br />
+Moyenne pour les états paires: μ= 100/2 = 50<br />
+Moyenne pour les états impaires: μ= (100/2)-1 = 49<br />
 ​Variance: σ²= k²/12 = 100²/12 = 833.33
