@@ -204,8 +204,8 @@ On rappelle que le nombre de colonne correspond nombre d'état qu'on appellera k
 ![Alt text](graphpair.png)
 ![Alt text](graphimpair.png)
 
-2\) On peut expliciter $X_n tel que:<br />
-$X_n = $X_0.P^n
+2\) On peut expliciter $X_n$ tel que:<br />
+$X_n = X_0.P^n$
 
 Pour faire la simulation numérique, nous avons utilisé python avec la bibliothère de mathlab:
 
@@ -283,11 +283,11 @@ On peut l'approximer à une loi normale
 On peut, en réalité, en distinguer 2 avec des paramètres différents. Les états paires et impaires.<br />
 Ils ont alors la même variance mais pas la même moyenne:
 
-Moyenne pour les états paires: μ= k/2<br />
-Moyenne pour les états impaires: μ= (k/2)-1<br />
-​Variance: σ²= k²/12<br />
+Moyenne pour les états paires: $μ= k/2$<br />
+Moyenne pour les états impaires: $μ= (k/2)-1$<br />
+​Variance: $σ²= k²/12$<br />
 
 Pour X200:<br />
-Moyenne pour les états paires: μ= 100/2 = 50<br />
-Moyenne pour les états impaires: μ= (100/2)-1 = 49<br />
-​Variance: σ²= k²/12 = 100²/12 = 833.33
+Moyenne pour les états paires: $μ= 100/2 = 50$<br />
+Moyenne pour les états impaires: $μ= (100/2)-1 = 49$<br />
+​Variance: $σ²= k²/12 = 100²/12 = 833.33$
