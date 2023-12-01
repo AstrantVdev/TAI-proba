@@ -49,7 +49,7 @@ $X_1 = P.X_0 = \left(\begin{array}{cc} 0,5 &0,1 &0,1\\ 0,2 &0,6 &0,2\\ 0,3 &0,3 
 ---
 4 & 5\) A l’aide d’un ordinateur, calculez la proportion de chaque arbre pour n = 20.
 
-![Alt text](image-2.png)
+![Alt text](image_2.png)
 
 On peut donc en déduire que l'écosystème tend vers la stabilité. Il précisément, il tend vers cette valeur :
 
