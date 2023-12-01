@@ -207,7 +207,7 @@ On rappelle que le nombre de colonne correspond nombre d'état qu'on appellera k
 2\) On peut expliciter $X_n$ tel que:<br />
 $X_n = X_0.P^n$
 
-Pour faire la simulation numérique, nous avons utilisé python avec la bibliothère de mathlab:
+Pour faire la simulation numérique, nous avons utilisé python avec la bibliothèque de mathlab:
 
 ```
 import numpy as np
