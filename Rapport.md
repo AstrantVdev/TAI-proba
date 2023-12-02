@@ -2,7 +2,7 @@
 
 # Sommaire
 
-- [1. La forêt des Landes : modèle à 3 état](#1-la-forêt-des-landes--modèle-à-3-états)
+- [1. La forêt des Landes : modèle à 3 états](#1-la-forêt-des-landes--modèle-à-3-états)
 - [2. Ecosystèmes méditerranéens à 5 états](#2-ecosystèmes-méditerranéens-à-5-états)
 - [3. Modèle plus riche d’écosystème](#3-modèle-plus-riche-décosystème)
 - [4. Pour aller plus loin](#4-pour-aller-plus-loin)
