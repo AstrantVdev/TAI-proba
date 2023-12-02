@@ -356,19 +356,19 @@ plt.show()
 ![Alt text](Xnenfonctionden.png)
 ![Alt text](DistributionX200.png)
 
-​Les probabilités de transition entre les paires sont égales, c'est le cas aussi pour les impaires entre-eux. Alors, entre les paires et entre les impaires, ils ont une chance égale d'être atteint après un grand nombre d'itérations. Par conséquent, cela suggère que la distribution des probabilités à X200 converge vers une distribution uniforme distinguer selon si ils sont paires ou impaires.
+​Les probabilités de transition entre les pairs sont égales, c'est le cas aussi pour les impairs entre-eux. Alors, entre les pairs et entre les impairs, ils ont une chance égale d'être atteint après un grand nombre d'itérations. Par conséquent, cela suggère que la distribution des probabilités à X200 converge vers une distribution uniforme distinguer selon si ils sont pairs ou impairs.
 ![Alt text](loiuniforme.png)
 
 On peut l'approximer à une loi normale
 ![Alt text](loinormal.png)
-On peut, en réalité, en distinguer 2 avec des paramètres différents. Les états paires et impaires.<br />
+On peut, en réalité, en distinguer 2 avec des paramètres différents. Les états pairs et impairs.<br />
 Ils ont alors la même variance mais pas la même moyenne:
 
-Moyenne pour les états paires: $μ= k/2$<br />
-Moyenne pour les états impaires: $μ= (k/2)-1$<br />
+Moyenne pour les états pairs: $μ= k/2$<br />
+Moyenne pour les états impairs: $μ= (k/2)-1$<br />
 ​Variance: $σ²= k²/12$<br />
 
 Pour X200:<br />
-Moyenne pour les états paires: $μ= 100/2 = 50$<br />
-Moyenne pour les états impaires: $μ= (100/2)-1 = 49$<br />
+Moyenne pour les états pairs: $μ= 100/2 = 50$<br />
+Moyenne pour les états impairs: $μ= (100/2)-1 = 49$<br />
 ​Variance: $σ²= k²/12 = 100²/12 = 833.33$
