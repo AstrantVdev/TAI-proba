@@ -99,15 +99,16 @@ $P((C\cap V)\setminus P_i) = P(C \setminus P_i)*P(V\setminus C)=0.2\times 0.1=0.
 ---
 4\) Donnez un exemple de trajectoire de probabilité nulle.
 
-$P_i-V-G_a$
+$P_i-V-G_a$ est un exemple de trajectoire de probabilité nulle
 
 ---
 5\) En vous servant de votre cours d’Algèbre linéaire de L1 expliquez, lorsque n tend vers l’infini,
 vers quelle proportion tend la dynamique lorsque
+
 $X_{0} =\left( \begin{matrix} C \\ V \\ Pe \\ Ga \\ Pi \end{matrix}\right )_{0}=0.2\times \left ( \begin{matrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{matrix}  \right )$
 
 ---
-6\) La transition de Pi vers Pe mime la présence des incendies. Étudier l’influence aux temps longs
+6\) La transition de $P_i$ vers $P_e$ mime la présence des incendies. Étudier l’influence aux temps longs
 des incendies, en faisant varier sa valeur dans la matrice.
 
 La valeur initiale est $P_i-P_e = 0.25$ et pour cette valeur : $X_n= \left( \begin{matrix} 0.1752\\ 0.1168\\ 0.2044\\ 0.1533\\ 0.3504 \end{matrix}\right )$
@@ -183,7 +184,7 @@ P = [0.1 0 0.8 0 0.2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
     0 0 0 0 0 0 0 0 0 0.2 0 0 0 0.05 0.1 0.05 0.1 0.1 0.2 0.1;
 ];
 
-X0 = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+X0 = 1/16*[1 1 1 1 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1]
 
 result = [X0]
 
@@ -226,9 +227,15 @@ $Y_{0} = \left(\begin{array}{cc} 0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 
 
 ![Alt text](image-6.png)
 
-Nombre de pas moyen pour que le système peuple les états {1, 2, 3, 4, 5} : 
+Nombre de pas moyen pour que le système peuple les états {1, 2, 3, 4, 5} : n=4
 
-Nombre de pas moyen pour peupler que le système états {14, 15, 16, 17, 18, 19, 20} :
+Nombre de pas moyen pour peupler que le système états {14, 15, 16, 17, 18, 19, 20} : n=3
+
+L'état {1, 2, 3, 4, 5} est le plus peuplé lorsque la dynamique à convergé, pour n=50 : 
+
+{1, 2, 3, 4, 5} -> {0.1185, 0.0484, 0.1076, 0.0782, 0.1028} -> 0.4555
+
+{14, 15, 16, 17, 18, 19, 20} -> {0.0906, 0.0494, 0.0552, 0.0496, 0.0678, 0.0559, 0.0391} -> 0.4076
 
 ---
 4\) Simulation des états de $Z_{n}$ par rapport à $n$ :
@@ -238,6 +245,11 @@ $Z_{0} = \left(\begin{array}{cc} 0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 
 
 ![Alt text](image-7.png)
 
+Le 12ème élément de $X_0$ est le seul élément non nul de ce vecteur. <br />
+Ainsi, seuls les éléments de la 12ème colonne de $P$ compte pour le résultat de la multiplication : $X_0 \times P$ <br />
+Or seul le 12ème éléments de la 12ème colonne de $P$ n'est pas nulle. <br />
+Ce qui fait que $X_0 \times P$ = $X_0$ pour chaque itération.
+
 ---
 5\) Simulation des états de $A_{n}$ par rapport à $n$ :
 
@@ -245,6 +257,21 @@ $A_{0} = \left(\begin{array}{cc} 0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 
  \end{array}\right)$
 
 ![Alt text](image-8.png)
+
+Seules les états {6, 7, 8} varient, et ce suivant une période n=3 :
+
+![Alt text](image-2.png)
+
+Le système revient à sa distribution initiale de manière périodique, pour tout $n = 3x, x \in N$
+
+Cette périodicité est dû à la composition des colonnes de $P$ ci dessous :
+
+![Alt text](image-9.png)
+
+On peut observer que la colonne 6 amène à décaler le 1 du vecteur initial vers l'état 7 <br />
+La colonne 7 amène à décaler le 1 du vecteur initial vers l'état 8 <br />
+La colonne 8 amène à décaler le 1 du vecteur initial vers l'état 6 <br />
+Et la boucle recommence.
 
 
 ## 4. Pour aller plus loin
