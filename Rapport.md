@@ -1,5 +1,7 @@
 # Rapport TAI (Chaînes de Markov)
 
+Azad BADAKOL, Guillaume DELHAYE Romain, DROUET Antoine IA, Djamel NAFISSE
+
 # Sommaire
 
 - [1. La forêt des Landes : modèle à 3 état](#1-la-forêt-des-landes--modèle-à-3-état)
