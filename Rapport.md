@@ -4,12 +4,12 @@ Azad BADAKOL, Guillaume DELHAYE Romain, DROUET Antoine IA, Djamel NAFISSE
 
 # Sommaire
 
-- [1. La forêt des Landes : modèle à 3 état](#1-la-forêt-des-landes--modèle-à-3-état)
+- [1. La forêt des Landes : modèle à 3 états](#1-la-forêt-des-landes--modèle-à-3-états)
 - [2. Ecosystèmes méditerranéens à 5 états](#2-ecosystèmes-méditerranéens-à-5-états)
 - [3. Modèle plus riche d’écosystème](#3-modèle-plus-riche-décosystème)
 - [4. Pour aller plus loin](#4-pour-aller-plus-loin)
 
-## 1. La forêt des Landes : modèle à 3 état
+## 1. La forêt des Landes : modèle à 3 états
 
 1\) Comment se traduisent ces informations sur la matrice P telle que nous l’avons définie, possédant
 la propriété de Markov ?
@@ -53,7 +53,7 @@ $X_1 = P \times X_0 = \left(\begin{array}{cc} 0.5 &0.1 &0.1\\ 0.2 &0.6 &0.2\\ 0.
 
 ![Alt text](image_2.png)
 
-On peut donc en déduire que l'écosystème tend vers la stabilité. Il précisément, il tend vers cette valeur :
+On peut donc en déduire que l'écosystème tend vers la stabilité. Précisément, il tend vers cette valeur :
 
 $X_{20} = \left(\begin{array}{cc} 0.16\\ 0.33\\ 0.50\\ \end{array}\right)$
 
@@ -106,9 +106,13 @@ $P_i-V-G_a$ est un exemple de trajectoire de probabilité nulle
 ---
 5\) En vous servant de votre cours d’Algèbre linéaire de L1 expliquez, lorsque n tend vers l’infini,
 vers quelle proportion tend la dynamique lorsque
+$X_{0} =\left( \begin{matrix} C \\ V \\ Pe \\ Ga \\ Pi \end{matrix}\right )_{0}=0,2\times \left ( \begin{matrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{matrix}  \right )$
+
 
 $X_{0} =\left( \begin{matrix} C \\ V \\ Pe \\ Ga \\ Pi \end{matrix}\right )_{0}=0.2\times \left ( \begin{matrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{matrix}  \right )$
 
+$X_{1}=P\times X_{0} $, alors $
+X_{n}=P^{n} \times X_{0} = \left( \begin{matrix} 0.1752\\ 0.1168\\ 0.2044\\ 0.1533\\ 0.3504 \end{matrix}\right )$
 ---
 6\) La transition de $P_i$ vers $P_e$ mime la présence des incendies. Étudier l’influence aux temps longs
 des incendies, en faisant varier sa valeur dans la matrice.
@@ -186,7 +190,7 @@ P = [0.1 0 0.8 0 0.2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
     0 0 0 0 0 0 0 0 0 0.2 0 0 0 0.05 0.1 0.05 0.1 0.1 0.2 0.1;
 ];
 
-X0 = 1/16*[1 1 1 1 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1]
+X0 = 1/16*[1 1 1 1 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1]'
 
 result = [X0]
 
@@ -196,7 +200,7 @@ red = [1, 0. 0];
 colors_p = [linspace(green(1),red(1),length)', linspace(green(2),red(2),length)', linspace(green(3),red(3),length)'];
 
 for x = 2:50
-    result(x,:) = result(x-1,:)*P';
+    result(x,:) = P*result(x-1,:);
 end
 round(result, 4);
 
@@ -212,20 +216,20 @@ title("Valeurs des états sur 10 itérations")
 hold off
 ```
 
-$X_{0} = 1/16 \times \left(\begin{array}{cc} 1 &1 &1 &1 &1 &0 &0 &0 &1 &1 &1 &0 &1 &1 &1 &1 &1 &1 &1 &1 \end{array}\right)$
+$X_{0} = 1/16 \times \left(\begin{array}{cc} 1 &1 &1 &1 &1 &0 &0 &0 &1 &1 &1 &0 &1 &1 &1 &1 &1 &1 &1 &1 \end{array}\right)\overset{T}{}  $
 
-$X_{1} = \left(\begin{array}{cc} 0.0688 &0.0406 &0.0844 &0.0500 &0.0813 &0 &0 &0 &0.0688 &0.0625 &0.0250 &0 &0.1219 &0.0750 &0.0438 &0.0500 &0.0438 &0.0688 &0.0594 &0.0563 \end{array}\right)$
+$X_{1} = \left(\begin{array}{cc} 0.0688 &0.0406 &0.0844 &0.0500 &0.0813 &0 &0 &0 &0.0688 &0.0625 &0.0250 &0 &0.1219 &0.0750 &0.0438 &0.0500 &0.0438 &0.0688 &0.0594 &0.0563 \end{array}\right)\overset{T}{}  $
 
-$X_{2} = \left(\begin{array}{cc} 0.09060 &0.03420 &0.07230 &0.04920 &0.09230 &0 &0 &0 &0.06880 &0.03690 &0.02190 &0 &0.1281 &0.08440 &0.04750 &0.05200 &0.04610 &0.06910 &0.05470 &0.05190 \end{array}\right)$
+$X_{2} = \left(\begin{array}{cc} 0.09060 &0.03420 &0.07230 &0.04920 &0.09230 &0 &0 &0 &0.06880 &0.03690 &0.02190 &0 &0.1281 &0.08440 &0.04750 &0.05200 &0.04610 &0.06910 &0.05470 &0.05190 \end{array}\right)\overset{T}{}  $
 
-$X_{50} = \left(\begin{array}{cc} 0.1084 &0.04440 &0.09850 &0.07160 &0.09410 &0 &0 &0 &0 &0 &0 &0 &0.1459 &0.09710 &0.05300 &0.05920 &0.05320 &0.07270 &0.06000 &0.04190 \end{array}\right)$
+$X_{50} = \left(\begin{array}{cc} 0.1084 &0.04440 &0.09850 &0.07160 &0.09410 &0 &0 &0 &0 &0 &0 &0 &0.1459 &0.09710 &0.05300 &0.05920 &0.05320 &0.07270 &0.06000 &0.04190 \end{array}\right)\overset{T}{}  $
 
 Il faut en moyenne un seul pas pour que toutes les valeurs soient concentrées sur les états {1, 2, 3, 4, 5}, {13, 14, 15, 16, 17, 18, 19, 20}
 
 ---
 3\) Simulation des états de $Y_{n}$ par rapport à $n$ :
 
-$Y_{0} = \left(\begin{array}{cc} 0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0 &0 &0 \end{array}\right)$
+$Y_{0} = \left(\begin{array}{cc} 0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0 &0 &0 \end{array}\right)\overset{T}{}  $
 
 ![Alt text](image-6.png)
 
@@ -233,7 +237,7 @@ Nombre de pas moyen pour que le système peuple les états {1, 2, 3, 4, 5} : n=4
 
 Nombre de pas moyen pour peupler que le système états {14, 15, 16, 17, 18, 19, 20} : n=3
 
-L'état {1, 2, 3, 4, 5} est le plus peuplé lorsque la dynamique à convergé, pour n=50 : 
+L'état {1, 2, 3, 4, 5} est le plus peuplé lorsque la dynamique a convergé, pour n=50 : 
 
 {1, 2, 3, 4, 5} -> {0.1185, 0.0484, 0.1076, 0.0782, 0.1028} -> 0.4555
 
@@ -243,7 +247,7 @@ L'état {1, 2, 3, 4, 5} est le plus peuplé lorsque la dynamique à convergé, p
 4\) Simulation des états de $Z_{n}$ par rapport à $n$ :
 
 $Z_{0} = \left(\begin{array}{cc} 0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0 &0
- \end{array}\right)$
+ \end{array}\right)\overset{T}{}  $
 
 ![Alt text](image-7.png)
 
@@ -256,7 +260,7 @@ Ce qui fait que $X_0 \times P$ = $X_0$ pour chaque itération.
 5\) Simulation des états de $A_{n}$ par rapport à $n$ :
 
 $A_{0} = \left(\begin{array}{cc} 0 &0 &0 &0 &0 &1 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0
- \end{array}\right)$
+ \end{array}\right)\overset{T}{}  $
 
 ![Alt text](image-8.png)
 
@@ -354,19 +358,19 @@ plt.show()
 ![Alt text](Xnenfonctionden.png)
 ![Alt text](DistributionX200.png)
 
-​Les probabilités de transition entre les paires sont égales, c'est le cas aussi pour les impaires entre-eux. Alors, entre les paires et entre les impaires, ils ont une chance égale d'être atteint après un grand nombre d'itérations. Par conséquent, cela suggère que la distribution des probabilités à X200 converge vers une distribution uniforme distinguer selon si ils sont paires ou impaires.
+​Les probabilités de transition entre les pairs sont égales, c'est le cas aussi pour les impairs entre-eux. Alors, entre les pairs et entre les impairs, ils ont une chance égale d'être atteint après un grand nombre d'itérations. Par conséquent, cela suggère que la distribution des probabilités à X200 converge vers une distribution uniforme distinguer selon si ils sont pairs ou impairs.
 ![Alt text](loiuniforme.png)
 
 On peut l'approximer à une loi normale
 ![Alt text](loinormal.png)
-On peut, en réalité, en distinguer 2 avec des paramètres différents. Les états paires et impaires.<br />
+On peut, en réalité, en distinguer 2 avec des paramètres différents. Les états pairs et impairs.<br />
 Ils ont alors la même variance mais pas la même moyenne:
 
-Moyenne pour les états paires: $μ= k/2$<br />
-Moyenne pour les états impaires: $μ= (k/2)-1$<br />
+Moyenne pour les états pairs: $μ= k/2$<br />
+Moyenne pour les états impairs: $μ= (k/2)-1$<br />
 ​Variance: $σ²= k²/12$<br />
 
 Pour X200:<br />
-Moyenne pour les états paires: $μ= 100/2 = 50$<br />
-Moyenne pour les états impaires: $μ= (100/2)-1 = 49$<br />
+Moyenne pour les états pairs: $μ= 100/2 = 50$<br />
+Moyenne pour les états impairs: $μ= (100/2)-1 = 49$<br />
 ​Variance: $σ²= k²/12 = 100²/12 = 833.33$
