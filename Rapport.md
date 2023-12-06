@@ -19,7 +19,7 @@ $X_{n}
 = \left(\begin{array}{cc} 1\\ 0\\ 0\\ \end{array}\right)$
 
 $X_{n+1}
-=\left(\begin{array}{cc} Cht\\ Ch\\ Rs\\ \end{array}\right)_{n+1}
+=\left(\begin{array}{cc} Rs\\ Ch\\ Cht\\ \end{array}\right)_{n+1}
 = \left(\begin{array}{cc} 0.5\\ 0.2\\ 0.3\\ \end{array}\right)$
 
 <br />
@@ -41,7 +41,7 @@ des arcs.
 
 $P = \left(\begin{array}{cc} 0.5 &0.1 &0.1\\ 0.2 &0.6 &0.2\\ 0.3 &0.3 &0.7\\ \end{array}\right)$
 
-![Alt text](image-1.png)
+![Alt text](image-10.png)
 
 ---
 3\) Calculez la proportion de chaque arbre pour l’année n = 1.
@@ -55,7 +55,7 @@ $X_1 = P \times X_0 = \left(\begin{array}{cc} 0.5 &0.1 &0.1\\ 0.2 &0.6 &0.2\\ 0.
 
 On peut donc en déduire que l'écosystème tend vers la stabilité. Précisément, il tend vers cette valeur :
 
-$X_{20} = \left(\begin{array}{cc} 0.16\\ 0.33\\ 0.50\\ \end{array}\right)$
+$X_{20} = \left(\begin{array}{cc} 0.50\\ 0.33\\ 0.16\\ \end{array}\right)$
 
 ---
 6\) Diagonalisation de $P$:
@@ -69,9 +69,9 @@ $A^{-1} = \left(\begin{array}{cc} 1/2 &1/2 &1/2\\ -1/3 &2/3 &-1/3\\ -1/2 &-1/2 &
 $P = A \times D \times A^{-1}$
 
 ---
-7\) Écrire le vecteur $X_n$ en fonction de $D_n$, $A$, $A^{−1}$ et la distribution initiale $X_0$
+7\) Écrire le vecteur $X_n$ en fonction de $D^n$, $A$, $A^{−1}$ et la distribution initiale $X_0$
 
-$X_n = X_0 \times (A \times D_n \times A^{−1})^T$
+$X_n = X_0 \times (A \times D^n \times A^{−1})^T$
 
 Avec matlab nous obtenons l'exact même résultat qu'à l'exercice 5.
 
@@ -83,20 +83,20 @@ Avec matlab nous obtenons l'exact même résultat qu'à l'exercice 5.
 2\) Quelle est, selon ce modèle, la probabilité que l’on passe de l’état Pi à Pe, d’une année sur
 l’autre ? 
 
-$P_i-P_e = 0.25$
+$Pi-Pe = 0.25$
 
 
 Et de l’état $P_e$ à $P_i$ ?<br />
-$P_e-P_i = 0$ car en une année, $Pe$ ne peut que passer à $G_a$ ou rester à $P_e$.
+$Pe-Pi = 0$ car en une année, $Pe$ ne peut que passer à $Ga$ ou rester à $Pe$.
 
 ---
-3\) Sachant que l’on est dans l’état $P_i$, quelle est la probabilité d’une trajectoire du type $P_i−P_e−G_a$ ?
+3\) Sachant que l’on est dans l’état $Pi$, quelle est la probabilité d’une trajectoire du type $Pi−Pe−Ga$ ?
 
-$P((P_e \cap G_a)\setminus P_i) = P(P_e \setminus P_i) \times P(Ga\setminus P_e)
+$P((Pe \cap Ga)\setminus Pi) = P(Pe \setminus Pi) \times P(Ga\setminus Pe)
 = 0.25\times 0.6 =0.15$
 
-Et d'une trajectoire du type $Pi−C −V$ ?<br />
-$P((C\cap V)\setminus P_i) = P(C \setminus P_i)*P(V\setminus C)=0.2\times 0.1=0.02$
+Et d'une trajectoire du type $Pi−C−V$ ?<br />
+$P((C\cap V)\setminus Pi) = P(C \setminus Pi)*P(V\setminus C)=0.2\times 0.1=0.02$
 
 ---
 4\) Donnez un exemple de trajectoire de probabilité nulle.
@@ -106,13 +106,15 @@ $P_i-V-G_a$ est un exemple de trajectoire de probabilité nulle
 ---
 5\) En vous servant de votre cours d’Algèbre linéaire de L1 expliquez, lorsque n tend vers l’infini,
 vers quelle proportion tend la dynamique lorsque
-$X_{0} =\left( \begin{matrix} C \\ V \\ Pe \\ Ga \\ Pi \end{matrix}\right )_{0}=0,2\times \left ( \begin{matrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{matrix}  \right )$
-
-
 $X_{0} =\left( \begin{matrix} C \\ V \\ Pe \\ Ga \\ Pi \end{matrix}\right )_{0}=0.2\times \left ( \begin{matrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{matrix}  \right )$
 
-$X_{1}=P\times X_{0} $, alors $
-X_{n}=P^{n} \times X_{0} = \left( \begin{matrix} 0.1752\\ 0.1168\\ 0.2044\\ 0.1533\\ 0.3504 \end{matrix}\right )$
+
+$X_{0} =\left( \begin{matrix} C\\ V\\ Pe\\ Ga\\ Pi \end{matrix}\right )_{0}=0.2\times \left ( \begin{matrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{matrix}  \right )$
+
+$X_{1}=P\times X_{0}$, alors 
+
+$X_{n}=P^n\times X_{0} = \left( \begin{matrix} 0.1752\\ 0.1168\\ 0.2044\\ 0.1533\\ 0.3504 \end{matrix}\right )$
+
 ---
 6\) La transition de $P_i$ vers $P_e$ mime la présence des incendies. Étudier l’influence aux temps longs
 des incendies, en faisant varier sa valeur dans la matrice.
